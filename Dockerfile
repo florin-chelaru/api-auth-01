@@ -11,10 +11,12 @@ COPY package*.json ./
 # RUN npm install
 # If you are building your code for production, equivalent to npm install
 RUN npm ci --only=production
+RUN npm install typescript --global
 
 # Bundle app source
 COPY . .
 
 EXPOSE 3000
+
 
 CMD [ "npm", "start" ]
