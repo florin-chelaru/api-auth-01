@@ -1,6 +1,5 @@
 import express from "express";
 import https from 'https';
-import fs from "fs";
 import IAction from "./actions/IAction";
 import LoginAction from "./actions/Login";
 import LogoutAction from "./actions/Logout";
@@ -11,6 +10,7 @@ import cookies from "cookie-parser";
 import jwt from "jsonwebtoken";
 import cors from "cors";
 import GoogleSignInAction from "./actions/GoogleSignIn";
+import ip from "ip";
 
 
 export default class Api {
@@ -83,7 +83,7 @@ export default class Api {
         action.apply));
 
     server.listen(port, () => {
-      console.log(`Caesar is listening.`);
+      console.log(`Caesar is listening at ip ${ip.address()}:${port}.`);
     });
   }
 }
