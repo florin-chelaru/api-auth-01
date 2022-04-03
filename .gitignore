@@ -1,3 +1,11 @@
+# Build files
+build
+certs
+jwt
+
+# IntelliJ
+.idea
+
 # Logs
 logs
 *.log
